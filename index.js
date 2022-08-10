@@ -13,6 +13,6 @@ app.use("/v1/api/users", require("./routes/api/users"));
 app.use("/v1/api/auth", require("./routes/api/auth"));
 
 //App Listen
-app.listen(3000, function () {
-   console.log(`Example app listening on port `);
+app.listen(process.env.PORT || 5000, function () {
+   console.log(`Example app listening on port ${process.env.PORT || 5000}!`);
 });
