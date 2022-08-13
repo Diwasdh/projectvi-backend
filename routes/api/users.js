@@ -1,11 +1,12 @@
 const express = require("express");
 const router = express.Router();
 const uuid = require("uuid");
-const { getAllUsers } = require("../../controller/user-controller");
+const { getAllUsers, getUser } = require("../../controller/user-controller");
 const users = require("../../userData");
 
 //get all user
 router.get("/", getAllUsers);
+router.get("/:id", getUser);
 
 //get a user
 
