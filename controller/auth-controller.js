@@ -1,8 +1,8 @@
 const User = require("../model/user");
 const bcrypt = require("bcrypt");
-const initializepassport = require("../config/passport.config");
-const passport = require("passport");
-initializepassport(passport);
+// const initializepassport = require("../config/passport.config");
+// const passport = require("passport");
+// initializepassport(passport);
 
 const register = async (req, res) => {
    const { name, email, password } = req.body;
