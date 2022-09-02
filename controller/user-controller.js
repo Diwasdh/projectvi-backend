@@ -29,7 +29,7 @@ exports.getUser = getUser;
 
 const getDoctorOnly = async (req, res) => {
    try {
-      const user = await User.findOne({ isDoctor: "fasle" });
+      const user = await User.findOne({ isDoctor: false });
       if (!user) {
          return res.status(404).json({ message: "NO Doctor Found" });
       }
