@@ -5,7 +5,7 @@ const bcrypt = require("bcrypt");
 // initializepassport(passport);
 
 const register = async (req, res) => {
-   const { name, email, password, userType, nmcNumber, degree } = req.body;
+   const { name, email, password, isDoctor, nmcNumber, degree } = req.body;
    if (!name || !email || !password) {
       return res.status(422).json({ message: "Invalid Data" });
    }
@@ -15,7 +15,7 @@ const register = async (req, res) => {
          name: name,
          email: email,
          password: hashedPassword,
-         userType: userType,
+         isDoctor: isDoctor,
          nmcNumber: nmcNumber,
          degree: degree,
       });

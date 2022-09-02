@@ -17,7 +17,7 @@ const userSchema = new mongoose.Schema({
       required: true,
       minlength: 6,
    },
-   userType: {
+   isDoctor: {
       type: String,
       required: true,
       default: "user",
