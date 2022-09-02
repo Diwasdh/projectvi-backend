@@ -11,6 +11,8 @@ app.get("/v1/api/status", (req, res) => {
 //Routes
 app.use("/v1/api/users", require("./routes/api/users"));
 app.use("/v1/api/auth", require("./routes/api/auth"));
+app.use("/v1/api/story", require("./routes/api/story"));
+app.use("/v1/api/mental_health", require("./routes/api/diseases"));
 
 //mongoose.connect
 mongoose
