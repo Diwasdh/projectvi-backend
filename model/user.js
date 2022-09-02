@@ -7,13 +7,30 @@ const userSchema = new mongoose.Schema({
    },
    email: {
       type: String,
-      required: true,
-      unique: true,
+      required: [true, "Email cannot be empty"],
+      unique: [true, "Email Already used"],
+      match: [/\S+@\S+\.\S+/, "Please Enter a valid email"],
+      lowercase: true,
    },
    password: {
       type: String,
       required: true,
       minlength: 6,
+   },
+   userType: {
+      type: String,
+      required: true,
+      default: "user",
+   },
+   nmcNumber: {
+      type: String,
+      required: false,
+      default: null,
+   },
+   degree: {
+      type: String,
+      required: false,
+      default: null,
    },
    date: {
       type: Date,

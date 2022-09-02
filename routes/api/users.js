@@ -2,7 +2,6 @@ const express = require("express");
 const router = express.Router();
 const uuid = require("uuid");
 const { getAllUsers, getUser } = require("../../controller/user-controller");
-const users = require("../../userData");
 
 //get all user
 router.get("/", getAllUsers);

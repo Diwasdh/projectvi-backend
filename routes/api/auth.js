@@ -2,7 +2,6 @@ const express = require("express");
 const router = express.Router();
 const uuid = require("uuid");
 const { register, login } = require("../../controller/auth-controller");
-const users = require("../../userData");
 
 // router.post("/login", (req, res) => {
 //    return res.json({

@@ -1,7 +1,6 @@
 var express = require("express");
 var app = express();
 var mongoose = require("mongoose");
-
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
@@ -21,7 +20,7 @@ mongoose
    .then(() => {
       //App Listen
       app.listen(process.env.PORT || 5000, function () {
-         console.log(`Example app listening on port ${process.env.PORT || 5000}!`);
+         console.log(`app listening on port ${process.env.PORT || 5000} !`);
       });
    })
    .catch((err) => {
