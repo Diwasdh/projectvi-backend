@@ -16,19 +16,15 @@ const postStory = async (req, res) => {
    const { userId, story } = req.body;
    try {
       const user = User.findById(userId);
-      if (!user) {
-         return res.status(401).json({ message: "Unauthorized Access" });
-      } else {
-         try {
-            const newStory = new Story({
-               userId: userId,
-               text: story,
-            });
-            await newStory.save();
-            return res.status(201).json({ Message: "Story Created" });
-         } catch (err) {
-            return res.status(500).json({ message: err.message });
-         }
+      try {
+         const newStory = new Story({
+            userId: userId,
+            text: story,
+         });
+         await newStory.save();
+         return res.status(201).json({ Message: "Story Created" });
+      } catch (err) {
+         return res.status(500).json({ message: err.message });
       }
    } catch (err) {
       return res.status(500).json({ message: err.message });
