@@ -24,6 +24,8 @@ const postStory = async (req, res) => {
                userId: userId,
                text: story,
             });
+            const story = await newStory.save();
+            return res.status(2.1).json({ Message: "Story Created" });
          } catch (err) {
             return res.status(500).json({ message: err.message });
          }
